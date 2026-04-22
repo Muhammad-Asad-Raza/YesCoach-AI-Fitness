@@ -1,0 +1,92 @@
+/* Footer */
+footer {
+  border-top: 1px solid var(--border);
+  padding: 60px;
+}
+
+.footer-top {
+  display: grid;
+  grid-template-columns: 2fr 1fr 1fr 1fr;
+  gap: 60px;
+  max-width: 1200px;
+  margin: 0 auto 48px;
+}
+
+.footer-brand .fl {
+  font-family: 'Clash Display', sans-serif;
+  font-size: 26px;
+  font-weight: 700;
+  margin-bottom: 12px;
+}
+
+.footer-brand .fl span {
+  color: var(--g);
+}
+
+.footer-brand p {
+  font-size: 14px;
+  color: var(--text2);
+  line-height: 1.7;
+  max-width: 280px;
+}
+
+.footer-col h4 {
+  font-size: 12px;
+  font-weight: 700;
+  color: var(--text);
+  letter-spacing: 1.5px;
+  text-transform: uppercase;
+  margin-bottom: 18px;
+}
+
+.footer-col a {
+  display: block;
+  font-size: 14px;
+  color: var(--text2);
+  text-decoration: none;
+  margin-bottom: 10px;
+  transition: color .2s;
+  cursor: none;
+}
+
+.footer-col a:hover {
+  color: var(--g);
+}
+
+.footer-bottom {
+  max-width: 1200px;
+  margin: 0 auto;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-top: 1px solid var(--border);
+  padding-top: 32px;
+  font-size: 13px;
+  color: var(--text3);
+}
+
+.footer-socials {
+  display: flex;
+  gap: 16px;
+}
+
+.social-link {
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  background: var(--surface);
+  border: 1px solid var(--border);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-decoration: none;
+  color: var(--text2);
+  font-size: 14px;
+  transition: all .2s;
+  cursor: none;
+}
+
+.social-link:hover {
+  border-color: var(--g);
+  color: var(--g);
+}
