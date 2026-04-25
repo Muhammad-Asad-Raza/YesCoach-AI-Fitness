@@ -15,13 +15,24 @@ const Layout = () => {
   const [isHovering, setIsHovering] = useState(false);
 
   useEffect(() => {
-    const handleMouseMove = (e) => {
-      mousePos.current.x = e.clientX;
-      mousePos.current.y = e.clientY;
-      
+    const updateCursorPosition = () => {
       if (cursorRef.current) {
         cursorRef.current.style.left = mousePos.current.x + 'px';
         cursorRef.current.style.top = mousePos.current.y + 'px';
+      }
+    };
+
+    const handleMouseMove = (e) => {
+      mousePos.current.x = e.clientX;
+      mousePos.current.y = e.clientY;
+      updateCursorPosition();
+    };
+
+    const handleTouchMove = (e) => {
+      if (e.touches && e.touches.length > 0) {
+        mousePos.current.x = e.touches[0].clientX;
+        mousePos.current.y = e.touches[0].clientY;
+        updateCursorPosition();
       }
     };
 
@@ -38,6 +49,8 @@ const Layout = () => {
     };
 
     window.addEventListener('mousemove', handleMouseMove);
+    window.addEventListener('touchstart', handleTouchMove);
+    window.addEventListener('touchmove', handleTouchMove);
     requestRef.current = requestAnimationFrame(animateRing);
 
     // Setup scroll reveal listener (global)
@@ -68,6 +81,8 @@ const Layout = () => {
 
     return () => {
       window.removeEventListener('mousemove', handleMouseMove);
+      window.removeEventListener('touchstart', handleTouchMove);
+      window.removeEventListener('touchmove', handleTouchMove);
       cancelAnimationFrame(requestRef.current);
       revObs.disconnect();
       mutationObserver.disconnect();
@@ -76,7 +91,7 @@ const Layout = () => {
 
   // Handle global hover states for cursor
   useEffect(() => {
-    const handleMouseOver = (e) => {
+    const handleHoverStart = (e) => {
       if (
         e.target.closest('a, button, .blog-card, .job-card, .help-cat, .faq-q, .dw-day, .store-btn')
       ) {
@@ -85,8 +100,12 @@ const Layout = () => {
         setIsHovering(false);
       }
     };
-    window.addEventListener('mouseover', handleMouseOver);
-    return () => window.removeEventListener('mouseover', handleMouseOver);
+    window.addEventListener('mouseover', handleHoverStart);
+    window.addEventListener('touchstart', handleHoverStart);
+    return () => {
+      window.removeEventListener('mouseover', handleHoverStart);
+      window.removeEventListener('touchstart', handleHoverStart);
+    };
   }, []);
 
   return (

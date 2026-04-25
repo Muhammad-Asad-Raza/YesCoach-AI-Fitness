@@ -4,6 +4,7 @@ import './Navbar.css';
 
 const Navbar = () => {
   const [scrolled, setScrolled] = useState(false);
+  const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   const location = useLocation();
 
   useEffect(() => {
@@ -20,14 +21,19 @@ const Navbar = () => {
     return () => window.removeEventListener('scroll', handleScroll);
   }, [location.pathname]);
 
-  const navClass = "navbar " + (scrolled || location.pathname !== '/' ? 'scrolled' : '');
+  useEffect(() => {
+    setMobileMenuOpen(false); // Close menu on route change
+  }, [location.pathname]);
+
+  const navClass = `navbar ${scrolled || location.pathname !== '/' ? 'scrolled' : ''} ${mobileMenuOpen ? 'mobile-open' : ''}`;
 
   return (
     <nav id="navbar" className={navClass}>
       <Link to="/" className="nav-logo">
         Yes<span>Coach</span>
       </Link>
-      <div className="nav-center">
+
+      <div className={`nav-center ${mobileMenuOpen ? 'show' : ''}`}>
         <div className="nav-item-wrap">
           <button className="nav-link has-dropdown">Product</button>
           <div className="dropdown">
@@ -52,10 +58,21 @@ const Navbar = () => {
             <Link to="/terms"><span className="di">📋</span>Terms of Service</Link>
           </div>
         </div>
+        <button className="nav-cta mobile-cta" onClick={() => document.querySelector('.cta-section')?.scrollIntoView({behavior:'smooth'})}>
+          Download Now
+        </button>
       </div>
-      <button className="nav-cta" onClick={() => document.querySelector('.cta-section')?.scrollIntoView({behavior:'smooth'})}>
-        Download Now
-      </button>
+
+      <div className="nav-right">
+        <button className="nav-cta desktop-cta" onClick={() => document.querySelector('.cta-section')?.scrollIntoView({behavior:'smooth'})}>
+          Download Now
+        </button>
+        <button className="mobile-toggle" onClick={() => setMobileMenuOpen(!mobileMenuOpen)}>
+          <div className="bar"></div>
+          <div className="bar"></div>
+          <div className="bar"></div>
+        </button>
+      </div>
     </nav>
   );
 };

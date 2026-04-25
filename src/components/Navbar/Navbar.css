@@ -140,3 +140,121 @@ nav.scrolled {
   background: var(--gl);
   transform: scale(1.04);
 }
+
+.nav-right {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}
+
+.mobile-toggle {
+  display: none;
+  flex-direction: column;
+  gap: 6px;
+  background: none;
+  border: none;
+  cursor: none;
+  padding: 10px;
+  z-index: 1001;
+}
+
+.mobile-toggle .bar {
+  width: 24px;
+  height: 2px;
+  background: var(--text);
+  border-radius: 2px;
+  transition: all .3s;
+}
+
+.mobile-open .mobile-toggle .bar:nth-child(1) {
+  transform: translateY(8px) rotate(45deg);
+}
+
+.mobile-open .mobile-toggle .bar:nth-child(2) {
+  opacity: 0;
+}
+
+.mobile-open .mobile-toggle .bar:nth-child(3) {
+  transform: translateY(-8px) rotate(-45deg);
+}
+
+.mobile-cta {
+  display: none;
+  width: 100%;
+  margin-top: 20px;
+}
+
+@media (max-width: 991px) {
+  nav, nav.scrolled {
+    padding: 15px 24px;
+  }
+
+  .nav-center {
+    position: fixed;
+    top: 0;
+    right: 0;
+    transform: translateX(100%);
+    width: 80%;
+    max-width: 400px;
+    height: 100vh;
+    background: rgba(8, 12, 10, 0.98);
+    backdrop-filter: blur(30px);
+    flex-direction: column;
+    padding: 100px 24px 40px;
+    transition: all .4s cubic-bezier(0.16, 1, 0.3, 1);
+    align-items: flex-start;
+    border-left: 1px solid var(--border);
+    z-index: 1000;
+    overflow-y: auto;
+  }
+
+  .nav-center.show {
+    transform: translateX(0);
+  }
+
+  .nav-item-wrap {
+    width: 100%;
+  }
+
+  .nav-link {
+    width: 100%;
+    padding: 16px 20px;
+    font-size: 18px;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+    border-radius: 0;
+    text-align: left;
+    display: block;
+    box-sizing: border-box;
+  }
+
+  .dropdown {
+    position: static;
+    transform: none;
+    opacity: 1;
+    visibility: visible;
+    background: none;
+    border: none;
+    padding: 0 0 10px 20px;
+    min-width: 0;
+    height: 0;
+    overflow: hidden;
+    transition: height .3s;
+  }
+
+  .nav-item-wrap:hover .dropdown {
+    height: auto;
+    transform: none;
+  }
+
+  .mobile-toggle {
+    display: flex;
+  }
+
+  .desktop-cta {
+    display: none;
+  }
+
+  .mobile-cta {
+    display: block;
+  }
+}
