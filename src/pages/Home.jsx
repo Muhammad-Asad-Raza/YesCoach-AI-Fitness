@@ -401,7 +401,7 @@ const Home = () => {
                 <div className="acp-msg"><div className="acp-avatar"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="black" strokeWidth="2.5"><polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"/></svg></div><div className="acp-bubble">Got it — swapped overhead press for landmine rows, reduced pull volume 30%. Your shoulder stays protected.</div></div>
               </div>
             </div>
-            <div className="feat-card reveal reveal-delay-1"><div className="feat-icon">💓</div><h3>HRV-Driven Planning</h3><p>Syncs with Oura, WHOOP, Garmin and Apple Health. Your recovery score shapes every training decision automatically.</p></div>
+            <div className="feat-card reveal reveal-delay-1"><div className="feat-icon">💓</div><h3>HRV-Driven Planning</h3><p>Your recovery score shapes every training decision automatically, ensuring you always train at the right intensity.</p></div>
             <div className="feat-card reveal"><div className="feat-icon">📅</div><h3>Dynamic Schedule</h3><p>A living calendar that reshuffles sessions around life — travel, bad sleep, missed days — without derailing long-term progress.</p></div>
             <div className="feat-card reveal reveal-delay-1"><div className="feat-icon">📊</div><h3>Progress Tracking</h3><p>Pinned metrics, PR history, body composition trends, and weekly charts — all automatically updated after each session.</p></div>
             <div className="feat-card reveal reveal-delay-2"><div className="feat-icon">🧬</div><h3>Biomarker Integration</h3><p>Upload lab results — testosterone, Vitamin D, cortisol — and the AI factors your biology directly into your plan.</p></div>
@@ -415,9 +415,8 @@ const Home = () => {
           <div className="reveal"><div className="section-label">Simple to start</div><h2 className="section-title">From install to<br/>first workout in minutes.</h2></div>
           <div className="steps">
             <div className="step reveal"><div className="step-num">01</div><h3>Set Your Goals</h3><p>Tell YesCoach what you want in plain language. It handles all the strategy.</p></div>
-            <div className="step reveal reveal-delay-1"><div className="step-num">02</div><h3>Connect Devices</h3><p>Link Oura, Apple Health, Strava or Garmin. AI reads your body from day one.</p></div>
-            <div className="step reveal reveal-delay-2"><div className="step-num">03</div><h3>Get Your Plan</h3><p>A fully personalised training block, built for you. Ready immediately.</p></div>
-            <div className="step reveal reveal-delay-3"><div className="step-num">04</div><h3>Train & Adapt</h3><p>Your plan evolves with every session. The AI optimises week by week.</p></div>
+            <div className="step reveal reveal-delay-1"><div className="step-num">02</div><h3>Get Your Plan</h3><p>A fully personalised training block, built for you. Ready immediately.</p></div>
+            <div className="step reveal reveal-delay-2"><div className="step-num">03</div><h3>Train & Adapt</h3><p>Your plan evolves with every session. The AI optimises week by week.</p></div>
           </div>
         </div>
       </section>

@@ -471,8 +471,8 @@ nav.scrolled{background:rgba(8,12,10,.9);backdrop-filter:blur(20px);border-botto
   a, button, .blog-card, .job-card, .help-cat, .faq-q, .dw-day, .store-btn { cursor: pointer !important; }
   
   .hero { padding: 100px 24px 60px; min-height: auto; width: 100%; }
-  .hero-title { font-size: clamp(34px, 10vw, 52px); letter-spacing: -1px; width: 100%; text-align: center; word-break: break-word; }
-  .hero-sub { font-size: 15px; margin-bottom: 32px; width: 100%; padding: 0; }
+  .hero-title { font-size: clamp(34px, 10vw, 52px); letter-spacing: -1px; width: 100%; text-align: center; word-break: break-word; margin-left: -12px; }
+  .hero-sub { font-size: 15px; margin-bottom: 32px; width: 100%; padding: 0;}
   .hero-actions { gap: 12px; }
   
   .phone-carousel-section::before, .phone-carousel-section::after { width: 80px; }
@@ -545,7 +545,7 @@ nav.scrolled{background:rgba(8,12,10,.9);backdrop-filter:blur(20px);border-botto
 @media (max-width: 480px) {
   .hero-eyebrow { font-size: 10px; padding: 4px 12px; margin-bottom: 24px; }
   .hero-title .line3 { font-size: 0.6em; }
-  .hero-sub { font-size: 14px; }
+  .hero-sub { font-size: 14px; margin-left: -20px;}
   
   .ph-grid { grid-template-columns: 1fr; }
   .progress-stats { grid-template-columns: 1fr; }
